@@ -1,0 +1,13 @@
+@font-face {
+    font-family: iphone;
+    src: url('../fonts/FontIos15[editby].ttf');
+}
+$text: #4B5259;
+body{
+    font-family: iphone;
+    color: $text;
+}
+
+.top-nav-ul{
+    font-size: 1rem;
+}
