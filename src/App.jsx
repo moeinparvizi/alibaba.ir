@@ -1,15 +1,14 @@
-// import { useState } from "react";
-import { ChevronDown, Person, QuestionCircle } from "react-bootstrap-icons";
 import TopNav from "./Components/topnav";
-
 import "./index.css";
 
-
 function App() {
+  // function mamad(){
+  // }
   return (
     <>
       <main>
-        <TopNav></TopNav>
+        <TopNav />
+        <section className="h-[200vh]">mamad</section>
       </main>
     </>
   );

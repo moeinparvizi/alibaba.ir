@@ -2,6 +2,17 @@ import { ChevronDown, Person, QuestionCircle } from "react-bootstrap-icons";
 import topLogo from "../assets/images/download.svg";
 import { useState } from "react";
 
+// fixed navigation bar on top
+document.querySelector("body").addEventListener("wheel", (e) => {
+  if (e.wheelDelta == -120) {
+    document.querySelector(".top-nav").parentElement.classList.remove("fixed");
+  } else {
+    if (e.offsetY >= 946) {
+      document.querySelector(".top-nav").parentElement.classList.add("fixed");
+    }
+  }
+});
+
 function TopNavMenu() {
   const [flag, setFlag] = useState(0);
   const [flag2, setFlag2] = useState(0);
@@ -9,9 +20,9 @@ function TopNavMenu() {
 
   function resetli() {
     document.querySelectorAll(".subtopnav").forEach((val) => {
-        val.classList.remove("top-[60px]");
-        val.classList.remove("opacity-100");
-        console.log("raftam");
+      val.classList.remove("top-[60px]");
+      val.classList.remove("opacity-100");
+      console.log("raftam");
     });
   }
 
@@ -25,7 +36,7 @@ function TopNavMenu() {
             setTimeout(() => {
               document.querySelector(".bilitul").classList.add("opacity-100");
             }, 100);
-            setFlag(1)
+            setFlag(1);
           } else {
             document.querySelector(".bilitul").classList.remove("top-[60px]");
             setTimeout(() => {
@@ -33,7 +44,7 @@ function TopNavMenu() {
                 .querySelector(".bilitul")
                 .classList.remove("opacity-100");
             }, 100);
-            setFlag(0)
+            setFlag(0);
           }
         }}
         className="flex items-center justify-center border-l border-light"
@@ -56,7 +67,7 @@ function TopNavMenu() {
             setTimeout(() => {
               document.querySelector(".eghamatul").classList.add("opacity-100");
             }, 100);
-            setFlag2(1)
+            setFlag2(1);
           } else {
             document.querySelector(".eghamatul").classList.remove("top-[60px]");
             setTimeout(() => {
@@ -64,7 +75,7 @@ function TopNavMenu() {
                 .querySelector(".eghamatul")
                 .classList.remove("opacity-100");
             }, 100);
-            setFlag2(0)
+            setFlag2(0);
           }
         }}
         className="flex items-center justify-center border-l border-light"
@@ -89,7 +100,7 @@ function TopNavMenu() {
             setTimeout(() => {
               document.querySelector(".bishtarul").classList.add("opacity-100");
             }, 100);
-            setFlag3(1)
+            setFlag3(1);
           } else {
             document.querySelector(".bishtarul").classList.remove("top-[60px]");
             setTimeout(() => {
@@ -97,7 +108,7 @@ function TopNavMenu() {
                 .querySelector(".bishtarul")
                 .classList.remove("opacity-100");
             }, 100);
-            setFlag3(0)
+            setFlag3(0);
           }
         }}
         className="flex items-center justify-center"
@@ -116,7 +127,7 @@ function TopNavMenu() {
 
 export default function TopNav() {
   return (
-    <nav className="hidden shadow-md md:flex p-3 justify-center">
+    <nav className="hidden shadow-md md:flex p-3 justify-center w-full transition-all">
       <div className="top-nav flex justify-between px-20 container items-center">
         <div className="flex justify-center items-center">
           <figure className="pe-20">
