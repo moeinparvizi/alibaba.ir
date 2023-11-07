@@ -6,15 +6,15 @@ module.exports = {
   theme: {
     extend: {},
     colors: {
-      transparent: 'transparent',
-      text:'#4B5259',
-      textHeder: '#2B2F33',
-      yellow:'#FDB713',
-      line: '#BEC6CC',
-      green: '#84E199',
-      light: '#E0E0E0',
-      white: '#ffffff',
-    }
+      transparent: "transparent",
+      text: "#4B5259",
+      textHeder: "#2B2F33",
+      yellow: "#FDB713",
+      line: "#BEC6CC",
+      green: "#84E199",
+      light: "#E0E0E0",
+      white: "#ffffff",
+      blue: "#0077DB",
+    },
   },
-  plugins: [],
 };

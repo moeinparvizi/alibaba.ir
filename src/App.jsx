@@ -1,14 +1,13 @@
 import TopNav from "./Components/topnav";
+import Content from "./Components/content";
 import "./index.css";
 
 function App() {
-  // function mamad(){
-  // }
   return (
     <>
       <main>
         <TopNav />
-        <section className="h-[200vh]">mamad</section>
+        <Content />
       </main>
     </>
   );

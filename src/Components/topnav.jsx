@@ -26,8 +26,17 @@ function TopNavMenu() {
     });
   }
 
+  // document.addEventListener("click", (event) => {
+  //   const subtopnav = document.querySelectorAll(".subtopnav");
+  //   subtopnav.forEach((val) => {
+  //     if (event.target !== val) {
+  //       resetli();
+  //     }
+  //   });
+  // });
+
   return (
-    <ul className="[&>li]:px-5 top-nav-ul hidden lg:flex">
+    <ul className="[&>li]:px-5 [&>li]:py-2 [&>li]:transition-all top-nav-ul hidden lg:flex">
       <li
         onClick={() => {
           if (flag == 0) {
@@ -47,7 +56,7 @@ function TopNavMenu() {
             setFlag(0);
           }
         }}
-        className="flex items-center justify-center border-l border-light"
+        className="cursor-pointer hover:rounded-md hover:bg-light flex items-center justify-center border-l border-light"
       >
         بلیط
         <ChevronDown className="ms-2" />
@@ -78,7 +87,7 @@ function TopNavMenu() {
             setFlag2(0);
           }
         }}
-        className="flex items-center justify-center border-l border-light"
+        className="cursor-pointer flex items-center justify-center hover:rounded-md hover:bg-light border-l border-light"
       >
         اقامت
         <ChevronDown className="ms-2" />
@@ -88,7 +97,7 @@ function TopNavMenu() {
         </ul>
       </li>
 
-      <li className="flex items-center justify-center border-l border-light">
+      <li className="cursor-pointer flex items-center justify-center border-l border-light hover:rounded-md hover:bg-light">
         تور
       </li>
 
@@ -111,13 +120,13 @@ function TopNavMenu() {
             setFlag3(0);
           }
         }}
-        className="flex items-center justify-center"
+        className="cursor-pointer flex items-center justify-center hover:rounded-md hover:bg-light"
       >
         بیشتر
         <ChevronDown className="ms-2" />
         <ul className="bishtarul subtopnav border-1 absolute top-[-200px] opacity-0 transition-[.2s] rounded-lg border border-light p-5 bg-white">
           <li className="pb-3 pe-10 border-b border-light">علی بابا پلاس</li>
-          <li className="pb-3 pe-10 border-b border-light">مجله علی بابا</li>
+          <li className="pb-3 pt-2 border-b border-light">مجله علی بابا</li>
           <li className="pt-2">بیمه مسافرتی</li>
         </ul>
       </li>
@@ -127,7 +136,7 @@ function TopNavMenu() {
 
 export default function TopNav() {
   return (
-    <nav className="hidden shadow-md md:flex p-3 justify-center w-full transition-all">
+    <nav className="hidden relative z-10 shadow-md md:flex p-3 justify-center w-full transition-all">
       <div className="top-nav flex justify-between px-20 container items-center">
         <div className="flex justify-center items-center">
           <figure className="pe-20">

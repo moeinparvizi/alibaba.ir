@@ -11,3 +11,16 @@ body{
 .top-nav-ul{
     font-size: 1rem;
 }
+.tab-links-active {
+    position: absolute;
+    bottom: 0;
+    right: -50%;
+    // transform: translateX(20%);
+    background-color: #0077db;
+    height: 5px;
+    border-radius: 3px 3px 0 0;
+    width: 100px;
+    transform-origin:center;
+    visibility: hidden;
+}
+
