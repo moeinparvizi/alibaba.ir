@@ -17,6 +17,8 @@ import ToorIcon from "./icons/toor";
 import HotelIcon from "./icons/hotel";
 import VillaIcon from "./icons/villa";
 
+import SubTab from "./subtab";
+
 import { useEffect, useState } from "react";
 
 function Tabs() {
@@ -50,8 +52,10 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[0];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerAirplanin)
+          document.querySelector(".banner").removeAttribute("src");
+          document
+            .querySelector(".banner")
+            .setAttribute("src", bannerAirplanin);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -73,8 +77,10 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[1];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerAirplanout)
+          document.querySelector(".banner").removeAttribute("src");
+          document
+            .querySelector(".banner")
+            .setAttribute("src", bannerAirplanout);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -96,8 +102,8 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[2];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerTrain)
+          document.querySelector(".banner").removeAttribute("src");
+          document.querySelector(".banner").setAttribute("src", bannerTrain);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -119,8 +125,8 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[3];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerBus)
+          document.querySelector(".banner").removeAttribute("src");
+          document.querySelector(".banner").setAttribute("src", bannerBus);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -142,8 +148,8 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[4];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerToor)
+          document.querySelector(".banner").removeAttribute("src");
+          document.querySelector(".banner").setAttribute("src", bannerToor);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -165,8 +171,8 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[5];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerHotel)
+          document.querySelector(".banner").removeAttribute("src");
+          document.querySelector(".banner").setAttribute("src", bannerHotel);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -188,8 +194,8 @@ function Tabs() {
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[6];
           resetTab(tab);
-          document.querySelector('.banner').removeAttribute('src')
-          document.querySelector('.banner').setAttribute('src',bannerVilla)
+          document.querySelector(".banner").removeAttribute("src");
+          document.querySelector(".banner").setAttribute("src", bannerVilla);
         }}
       >
         <figure className="text-blue my-2 font-bold">
@@ -211,8 +217,8 @@ function Tabs() {
   );
 }
 
-function Content() {
 
+function Content() {
   return (
     <section className="flex justify-center px-20">
       <div className="container">
@@ -221,10 +227,7 @@ function Content() {
           <figcaption className="border-2 w-10/12 rounded-md border-line translate-x-[-10%] translate-y-[-62%] bg-white">
             <Tabs />
             <hr className="border border-line" />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nemo,
-            rerum eaque eos corrupti repellat blanditiis sunt facilis deleniti
-            ullam, alias tenetur iusto, doloribus ipsam nulla aspernatur
-            quibusdam culpa commodi!
+            <SubTab />
           </figcaption>
         </figure>
       </div>
