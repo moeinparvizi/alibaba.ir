@@ -7,6 +7,7 @@ import bannerBus from "../assets/images/banner/hero-824e4df4.webp";
 import bannerToor from "../assets/images/banner/hero-f039b6c5.webp";
 import bannerHotel from "../assets/images/banner/hero-ea8b776d.jpg";
 import bannerVilla from "../assets/images/banner/hero-2aa84383.jpg";
+import logomobile from "../assets/images/logomobile.svg";
 
 // svgs
 import ParvazeDakheliIcon from "./icons/parvazedakheli";
@@ -45,10 +46,21 @@ function Tabs() {
     resetTab(document.querySelectorAll(".tab")[0]);
   }, []);
 
+  const mobileMenu = setInterval(() => {
+    if(window.scrollY > 300){
+      document.querySelector('.menu-top').classList.add('mobilemenuactive')
+      document.querySelector('.mobilemenuparent').classList.add('!h-[100px]')
+    }
+    if(window.scrollY < 300){
+      document.querySelector('.menu-top').classList.remove('mobilemenuactive')
+      document.querySelector('.mobilemenuparent').classList.remove('!h-[100px]')
+    }
+  },400)
+
   return (
-    <ul className="flex justify-evenly items-center relative [&>li]:text-center">
+    <ul className="menu-top flex justify-evenly items-center relative [&>li]:text-center">
       <li
-        className="relative tab"
+        className="relative tab parvaze-dakheli"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[0];
           resetTab(tab);
@@ -73,7 +85,7 @@ function Tabs() {
         ></li>
       </li>
       <li
-        className="relative tab"
+        className="relative tab parvaze-khareji"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[1];
           resetTab(tab);
@@ -98,7 +110,7 @@ function Tabs() {
         ></li>
       </li>
       <li
-        className="relative tab"
+        className="relative tab ghatar"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[2];
           resetTab(tab);
@@ -121,7 +133,7 @@ function Tabs() {
         ></li>
       </li>
       <li
-        className="relative tab"
+        className="relative tab bus"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[3];
           resetTab(tab);
@@ -144,7 +156,7 @@ function Tabs() {
         ></li>
       </li>
       <li
-        className="relative tab"
+        className="relative tab toor"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[4];
           resetTab(tab);
@@ -167,7 +179,7 @@ function Tabs() {
         ></li>
       </li>
       <li
-        className="relative tab"
+        className="relative tab hotel"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[5];
           resetTab(tab);
@@ -190,7 +202,7 @@ function Tabs() {
         ></li>
       </li>
       <li
-        className="relative tab"
+        className="relative tab villa-eghamatgah"
         onClick={() => {
           const tab = document.querySelectorAll(".tab")[6];
           resetTab(tab);
@@ -217,16 +229,20 @@ function Tabs() {
   );
 }
 
-
 function Content() {
   return (
-    <section className="flex justify-center px-20">
-      <div className="container">
-        <figure className="w-full flex justify-center flex-col">
-          <img className="banner" src={bannerAirplanin} alt="banner" />
-          <figcaption className="border-2 w-10/12 rounded-md border-line translate-x-[-10%] translate-y-[-62%] bg-white">
+    <section className="nav-section relative md:flex justify-center md:mt-10 lg:mt-15 px-0 md:px-20">
+      <div className="md:container">
+        <figure className="w-full mobilemenuparent flex justify-center flex-col h-[200px] bg-yellow md:bg-transparent">
+          <img
+            className="banner hidden md:flex"
+            src={bannerAirplanin}
+            alt="banner"
+          />
+          <img src={logomobile} className="flex md:hidden absolute w-[20%] top-10 left-1/2 -translate-x-1/2" alt="" />
+          <figcaption className="mobileulparent absolute left-1/2 -translate-x-1/2 top-[110%] md:top-[130%] border-2 w-10/12 rounded-md border-line translate-x-[-10%] translate-y-[-62%] bg-white">
             <Tabs />
-            <hr className="border border-line" />
+            <hr className="border border-line hidden md:flex" />
             <SubTab />
           </figcaption>
         </figure>

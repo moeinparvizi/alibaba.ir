@@ -1,6 +1,7 @@
-// TODO: start this
 export default function SubTab() {
   return (
-    <div>this is a bbb</div>
+    <div className="hidden md:flex">
+      moeinparvizi
+    </div>
   )
 }

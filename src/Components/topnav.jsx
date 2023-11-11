@@ -5,11 +5,24 @@ import { useState } from "react";
 // fixed navigation bar on top
 document.querySelector("body").addEventListener("wheel", (e) => {
   if (e.wheelDelta == -120) {
-    document.querySelector(".top-nav").parentElement.classList.remove("fixed");
+    if (
+      document
+        .querySelector(".top-nav")
+        .parentElement.classList.contains("!fixed")
+    ) {
+      document
+        .querySelector(".top-nav")
+        .parentElement.classList.remove("!fixed");
+    }
   } else {
     if (e.offsetY >= 946) {
-      document.querySelector(".top-nav").parentElement.classList.add("fixed");
+      document.querySelector(".top-nav").parentElement.classList.add("!fixed");
+      document.querySelector(".top-nav").parentElement.classList.add("!top-0");
     }
+  }
+  if (e.offsetY < 400) {
+    document.querySelector(".top-nav").parentElement.classList.remove("!fixed");
+    document.querySelector(".top-nav").parentElement.classList.remove("!top-0");
   }
 });
 
@@ -136,7 +149,7 @@ function TopNavMenu() {
 
 export default function TopNav() {
   return (
-    <nav className="hidden relative z-10 shadow-md md:flex p-3 justify-center w-full transition-all">
+    <nav className="hidden bg-white relative z-10 shadow-md md:flex p-3 justify-center w-full transition-all">
       <div className="top-nav flex justify-between px-20 container items-center">
         <div className="flex justify-center items-center">
           <figure className="pe-20">
@@ -159,7 +172,7 @@ export default function TopNav() {
               >
                 <path
                   d="M13.875 1.5a1.5 1.5 0 0 1 1.496 1.388l.004.112v1.5h1.875a2.25 2.25 0 0 1 2.246 2.118l.004.132V18a2.25 2.25 0 0 1-2.118 2.246l-.132.004h-.375V21a.75.75 0 0 1-1.495.087L15.375 21v-.75h-4.97a3.001 3.001 0 0 1-2.755 2.246l-.15.004a3 3 0 0 1-2.25-4.984V6.75a2.25 2.25 0 0 1 2.118-2.246L7.5 4.5h1.875V3a1.5 1.5 0 0 1 1.388-1.496l.112-.004h3ZM7.5 18a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9.75-12H7.5a.75.75 0 0 0-.745.663l-.005.087v9.845a3.004 3.004 0 0 1 3.655 2.155h6.845a.75.75 0 0 0 .745-.663L18 18V6.75a.75.75 0 0 0-.663-.745L17.25 6Zm-3 2.25a.75.75 0 0 1 .745.663L15 9v6.75a.75.75 0 0 1-1.495.088l-.005-.088V9a.75.75 0 0 1 .75-.75Zm-3.75 0a.75.75 0 0 1 .745.663L11.25 9v6.75a.75.75 0 0 1-1.495.088l-.005-.088V9a.75.75 0 0 1 .75-.75ZM13.875 3h-3v1.5h3V3Z"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                 ></path>
               </svg>
               سفر های من
