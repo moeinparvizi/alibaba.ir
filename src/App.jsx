@@ -8,6 +8,7 @@ function App() {
       <main>
         <TopNav />
         <Content />
+        {/* this is a test section for menu scroll action */}
         <section className="h-[400vh]"></section>
       </main>
     </>

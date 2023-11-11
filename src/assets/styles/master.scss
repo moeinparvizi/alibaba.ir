@@ -96,3 +96,30 @@ body{
     }
 }
 
+.mabda-maghsad-tarikh {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgb(190, 198, 204);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 2px;
+    width: 200px !important;
+    height: 50px;
+
+    &:focus{
+        outline: none;
+        border: none;
+        border: 1px solid rgb(190, 198, 204);
+    }
+}
+.mabda {
+    border-radius: 0px 10px 10px 0px;
+    &:focus{
+        border: none;
+    }
+}
+.maghsad{
+    border-radius: 10px 0px 0px 10px;
+}

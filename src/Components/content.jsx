@@ -46,7 +46,7 @@ function Tabs() {
     resetTab(document.querySelectorAll(".tab")[0]);
   }, []);
 
-  const mobileMenu = setInterval(() => {
+  setInterval(() => {
     if(window.scrollY > 300){
       document.querySelector('.menu-top').classList.add('mobilemenuactive')
       document.querySelector('.mobilemenuparent').classList.add('!h-[100px]')
@@ -240,7 +240,7 @@ function Content() {
             alt="banner"
           />
           <img src={logomobile} className="flex md:hidden absolute w-[20%] top-10 left-1/2 -translate-x-1/2" alt="" />
-          <figcaption className="mobileulparent absolute left-1/2 -translate-x-1/2 top-[110%] md:top-[130%] border-2 w-10/12 rounded-md border-line translate-x-[-10%] translate-y-[-62%] bg-white">
+          <figcaption className="mobileulparent absolute left-1/2 -translate-x-1/2 top-[110%] md:top-[130%] border-2 w-10/12 rounded-md border-line translate-y-[-62%] bg-white">
             <Tabs />
             <hr className="border border-line hidden md:flex" />
             <SubTab />
