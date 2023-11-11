@@ -1,15 +1,16 @@
 import TopNav from "./Components/topnav";
-import Content from "./Components/content";
+import Header from "./Components/header";
 import "./index.css";
+import Content from "./Components/content";
 
 function App() {
   return (
     <>
       <main>
         <TopNav />
-        <Content />
+        <Header />
         {/* this is a test section for menu scroll action */}
-        <section className="h-[400vh]"></section>
+        <Content />
       </main>
     </>
   );
