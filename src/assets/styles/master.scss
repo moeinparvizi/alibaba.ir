@@ -123,3 +123,18 @@ body{
 .maghsad{
     border-radius: 10px 0px 0px 10px;
 }
+
+.swiper-pagination-bullet-active{
+    background-color: #FDB713;
+}
+.swiper-pagination{
+    position: absolute !important;
+    top: 90% !important;
+    z-index: 9999;
+}
+.swiper {
+    height: 300px;
+    @media only screen and (max-width:500px) {
+        height: 180px;
+    }
+}

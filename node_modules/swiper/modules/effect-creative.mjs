@@ -84,7 +84,11 @@ function EffectCreative(_ref) {
       });
       // set rotates
       r.forEach((value, index) => {
-        r[index] = data.rotate[index] * Math.abs(progress * multiplier);
+        let val = data.rotate[index] * Math.abs(progress * multiplier);
+        if (swiper.browser && swiper.browser.isSafari && Math.abs(val) / 90 % 2 === 1) {
+          val += 0.001;
+        }
+        r[index] = val;
       });
       slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
       const translateString = t.join(', ');

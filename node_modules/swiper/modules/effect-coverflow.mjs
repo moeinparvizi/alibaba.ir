@@ -59,6 +59,14 @@ function EffectCoverflow(_ref) {
       if (Math.abs(rotateY) < 0.001) rotateY = 0;
       if (Math.abs(rotateX) < 0.001) rotateX = 0;
       if (Math.abs(scale) < 0.001) scale = 0;
+      if (swiper.browser && swiper.browser.isSafari) {
+        if (Math.abs(rotateY) / 90 % 2 === 1) {
+          rotateY += 0.001;
+        }
+        if (Math.abs(rotateX) / 90 % 2 === 1) {
+          rotateX += 0.001;
+        }
+      }
       const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
       const targetEl = effectTarget(params, slideEl);
       targetEl.style.transform = slideTransform;

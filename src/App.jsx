@@ -2,6 +2,7 @@ import TopNav from "./Components/topnav";
 import Header from "./Components/header";
 import "./index.css";
 import Content from "./Components/content";
+import Slider from "./Components/slider";
 
 function App() {
   return (
@@ -9,8 +10,10 @@ function App() {
       <main>
         <TopNav />
         <Header />
-        {/* this is a test section for menu scroll action */}
         <Content />
+        <Slider />
+        {/* this is a test section for menu scroll action */}
+        <section className="h-[200vh]"></section>
       </main>
     </>
   );

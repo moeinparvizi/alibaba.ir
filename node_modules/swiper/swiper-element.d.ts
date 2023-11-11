@@ -42,6 +42,24 @@ interface SwiperContainerEventMap extends Omit<HTMLElementEventMap, 'click' | 'p
    * Event will be fired on mousewheel scroll
    */
   scroll: CustomEvent<[swiper: Swiper, event: WheelEvent]>;/**
+   * Event will be fired after pagination rendered
+   */
+  paginationrender: CustomEvent<[swiper: Swiper, paginationEl: HTMLElement]>;
+
+  /**
+   * Event will be fired when pagination updated
+   */
+  paginationupdate: CustomEvent<[swiper: Swiper, paginationEl: HTMLElement]>;
+
+  /**
+   * Event will be fired on pagination hide
+   */
+  paginationhide: CustomEvent<[swiper: Swiper]>;
+
+  /**
+   * Event will be fired on pagination show
+   */
+  paginationshow: CustomEvent<[swiper: Swiper]>;/**
    * Event will be fired on navigation hide
    */
   navigationhide: CustomEvent<[swiper: Swiper]>;
@@ -72,25 +90,7 @@ interface SwiperContainerEventMap extends Omit<HTMLElementEventMap, 'click' | 'p
   scrollbardragend: CustomEvent<[swiper: Swiper, event: MouseEvent | TouchEvent | PointerEvent]>;/**
    * Event will be fired on zoom change
    */
-  zoomchange: CustomEvent<[swiper: Swiper, scale: number, imageEl: HTMLElement, slideEl: HTMLElement]>;/**
-   * Event will be fired after pagination rendered
-   */
-  paginationrender: CustomEvent<[swiper: Swiper, paginationEl: HTMLElement]>;
-
-  /**
-   * Event will be fired when pagination updated
-   */
-  paginationupdate: CustomEvent<[swiper: Swiper, paginationEl: HTMLElement]>;
-
-  /**
-   * Event will be fired on pagination hide
-   */
-  paginationhide: CustomEvent<[swiper: Swiper]>;
-
-  /**
-   * Event will be fired on pagination show
-   */
-  paginationshow: CustomEvent<[swiper: Swiper]>;
+  zoomchange: CustomEvent<[swiper: Swiper, scale: number, imageEl: HTMLElement, slideEl: HTMLElement]>;
 
   
   /**

@@ -72,6 +72,24 @@ type SwiperProps = Omit<
    * Event will be fired on mousewheel scroll
    */
   onScroll?: (swiper: SwiperClass, event: WheelEvent) => void;/**
+   * Event will be fired after pagination rendered
+   */
+  onPaginationRender?: (swiper: SwiperClass, paginationEl: HTMLElement) => void;
+
+  /**
+   * Event will be fired when pagination updated
+   */
+  onPaginationUpdate?: (swiper: SwiperClass, paginationEl: HTMLElement) => void;
+
+  /**
+   * Event will be fired on pagination hide
+   */
+  onPaginationHide?: (swiper: SwiperClass) => void;
+
+  /**
+   * Event will be fired on pagination show
+   */
+  onPaginationShow?: (swiper: SwiperClass) => void;/**
    * Event will be fired on navigation hide
    */
   onNavigationHide?: (swiper: SwiperClass) => void;
@@ -102,25 +120,7 @@ type SwiperProps = Omit<
   onScrollbarDragEnd?: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;/**
    * Event will be fired on zoom change
    */
-  onZoomChange?: (swiper: SwiperClass, scale: number, imageEl: HTMLElement, slideEl: HTMLElement) => void;/**
-   * Event will be fired after pagination rendered
-   */
-  onPaginationRender?: (swiper: SwiperClass, paginationEl: HTMLElement) => void;
-
-  /**
-   * Event will be fired when pagination updated
-   */
-  onPaginationUpdate?: (swiper: SwiperClass, paginationEl: HTMLElement) => void;
-
-  /**
-   * Event will be fired on pagination hide
-   */
-  onPaginationHide?: (swiper: SwiperClass) => void;
-
-  /**
-   * Event will be fired on pagination show
-   */
-  onPaginationShow?: (swiper: SwiperClass) => void;
+  onZoomChange?: (swiper: SwiperClass, scale: number, imageEl: HTMLElement, slideEl: HTMLElement) => void;
     
   /**
    * Fired right after Swiper initialization.

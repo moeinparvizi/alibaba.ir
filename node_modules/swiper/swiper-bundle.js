@@ -1,5 +1,5 @@
 /**
- * Swiper 11.0.3
+ * Swiper 11.0.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: October 26, 2023
+ * Released on: November 9, 2023
  */
 
 var Swiper = (function () {
@@ -8964,6 +8964,9 @@ var Swiper = (function () {
         if (progress <= 1 && progress > -1) {
           wrapperRotate = slideIndex * 90 + progress * 90;
           if (rtl) wrapperRotate = -slideIndex * 90 - progress * 90;
+          if (swiper.browser && swiper.browser.isSafari && Math.abs(wrapperRotate) / 90 % 2 === 1) {
+            wrapperRotate += 0.001;
+          }
         }
         slideEl.style.transform = transform;
         if (params.slideShadows) {
@@ -8974,14 +8977,14 @@ var Swiper = (function () {
       wrapperEl.style['-webkit-transform-origin'] = `50% 50% -${swiperSize / 2}px`;
       if (params.shadow) {
         if (isHorizontal) {
-          cubeShadowEl.style.transform = `translate3d(0px, ${swiperWidth / 2 + params.shadowOffset}px, ${-swiperWidth / 2}px) rotateX(90deg) rotateZ(0deg) scale(${params.shadowScale})`;
+          cubeShadowEl.style.transform = `translate3d(0px, ${swiperWidth / 2 + params.shadowOffset}px, ${-swiperWidth / 2}px) rotateX(89.99deg) rotateZ(0deg) scale(${params.shadowScale})`;
         } else {
           const shadowAngle = Math.abs(wrapperRotate) - Math.floor(Math.abs(wrapperRotate) / 90) * 90;
           const multiplier = 1.5 - (Math.sin(shadowAngle * 2 * Math.PI / 360) / 2 + Math.cos(shadowAngle * 2 * Math.PI / 360) / 2);
           const scale1 = params.shadowScale;
           const scale2 = params.shadowScale / multiplier;
           const offset = params.shadowOffset;
-          cubeShadowEl.style.transform = `scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${swiperHeight / 2 + offset}px, ${-swiperHeight / 2 / scale2}px) rotateX(-90deg)`;
+          cubeShadowEl.style.transform = `scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${swiperHeight / 2 + offset}px, ${-swiperHeight / 2 / scale2}px) rotateX(-89.99deg)`;
         }
       }
       const zFactor = (browser.isSafari || browser.isWebView) && browser.needPerspectiveFix ? -swiperSize / 2 : 0;
@@ -9097,6 +9100,14 @@ var Swiper = (function () {
         } else if (rtl) {
           rotateY = -rotateY;
         }
+        if (swiper.browser && swiper.browser.isSafari) {
+          if (Math.abs(rotateY) / 90 % 2 === 1) {
+            rotateY += 0.001;
+          }
+          if (Math.abs(rotateX) / 90 % 2 === 1) {
+            rotateX += 0.001;
+          }
+        }
         slideEl.style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
         if (params.slideShadows) {
           createSlideShadows(slideEl, progress);
@@ -9195,6 +9206,14 @@ var Swiper = (function () {
         if (Math.abs(rotateY) < 0.001) rotateY = 0;
         if (Math.abs(rotateX) < 0.001) rotateX = 0;
         if (Math.abs(scale) < 0.001) scale = 0;
+        if (swiper.browser && swiper.browser.isSafari) {
+          if (Math.abs(rotateY) / 90 % 2 === 1) {
+            rotateY += 0.001;
+          }
+          if (Math.abs(rotateX) / 90 % 2 === 1) {
+            rotateX += 0.001;
+          }
+        }
         const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
         const targetEl = effectTarget(params, slideEl);
         targetEl.style.transform = slideTransform;
@@ -9316,7 +9335,11 @@ var Swiper = (function () {
         });
         // set rotates
         r.forEach((value, index) => {
-          r[index] = data.rotate[index] * Math.abs(progress * multiplier);
+          let val = data.rotate[index] * Math.abs(progress * multiplier);
+          if (swiper.browser && swiper.browser.isSafari && Math.abs(val) / 90 % 2 === 1) {
+            val += 0.001;
+          }
+          r[index] = val;
         });
         slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
         const translateString = t.join(', ');
@@ -9492,7 +9515,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 11.0.3
+   * Swiper 11.0.4
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9500,7 +9523,7 @@ var Swiper = (function () {
    *
    * Released under the MIT License
    *
-   * Released on: October 26, 2023
+   * Released on: November 9, 2023
    */
 
 
