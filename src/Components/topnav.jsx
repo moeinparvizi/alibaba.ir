@@ -149,7 +149,7 @@ function TopNavMenu() {
 
 export default function TopNav() {
   return (
-    <nav className="hidden bg-white relative z-10 shadow-md md:flex p-3 justify-center w-full transition-all">
+    <nav className="hidden bg-white relative z-10 shadow-md md:flex p-3 justify-center w-full transition-all z-50">
       <div className="top-nav flex justify-between px-20 container items-center">
         <div className="flex justify-center items-center">
           <figure className="pe-20">

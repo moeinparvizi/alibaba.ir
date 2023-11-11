@@ -231,7 +231,7 @@ function Tabs() {
 
 function Content() {
   return (
-    <header className="nav-section relative md:flex justify-center md:mt-10 lg:mt-15 px-0 md:px-20 z-50">
+    <header className="nav-section relative md:flex justify-center md:mt-10 lg:mt-15 px-0 md:px-20 z-40">
       <div className="md:container">
         <figure className="w-full mobilemenuparent flex justify-center flex-col h-[200px] bg-yellow md:bg-transparent">
           <img
