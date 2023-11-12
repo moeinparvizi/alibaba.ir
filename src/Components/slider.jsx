@@ -34,7 +34,7 @@ function Mobile() {
         }}
         modules={[Autoplay, Pagination, Navigation, Keyboard]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
+        className="mySwiper flex justify-center"
       >
         <SwiperSlide>
             <figure>
@@ -87,7 +87,7 @@ function Big() {
         }}
         modules={[Autoplay, Pagination, Navigation, Keyboard]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
+        className="mySwiper flex justify-center"
       >
         <SwiperSlide>
             <figure>
