@@ -28,7 +28,7 @@ export default function barcode() {
           </div>
 
           <figure className="w-[30%]">
-            <img src={mobile} alt="two mobile picture" />
+            <img className="h-[120px] md:h-auto" src={mobile} alt="two mobile picture" />
           </figure>
         </div>
       </div>
