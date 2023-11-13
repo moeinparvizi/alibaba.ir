@@ -34,7 +34,7 @@ function Mobile() {
         }}
         modules={[Autoplay, Pagination, Navigation, Keyboard]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper flex justify-center"
+        className="mySwiper flex justify-center !h-[200px]"
       >
         <SwiperSlide>
             <figure>
@@ -120,7 +120,7 @@ function Big() {
 export default function slider() {
   return (
     <>
-      <section className="flex justify-center items-center md:hidden mt-10 mx-5 relative">
+      <section className="flex justify-center items-center md:hidden mt-10 mx-5 mb-5 relative">
         <Mobile />
       </section>
       <section className="hidden md:flex justify-center items-center mt-10 relative">
