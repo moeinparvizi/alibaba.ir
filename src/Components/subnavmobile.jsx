@@ -5,7 +5,7 @@ import User from "./icons/user"
 
 export default function subnavmobile() {
   return (
-    <section className="flex md:hidden fixed bottom-0 w-full border-t border-line">
+    <section className="flex md:hidden fixed z-50 bottom-0 w-full border-t border-line">
         <div className="flex w-full items-center bg-white h-16">
             <figure className="flex flex-col justify-center items-center text-blue w-[25%]">
                 <Home />
