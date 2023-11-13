@@ -20,7 +20,7 @@ document.querySelector("body").addEventListener("wheel", (e) => {
       document.querySelector(".top-nav").parentElement.classList.add("!top-0");
     }
   }
-  if (e.offsetY < 400) {
+  if (e.offsetY < 200) {
     document.querySelector(".top-nav").parentElement.classList.remove("!fixed");
     document.querySelector(".top-nav").parentElement.classList.remove("!top-0");
   }

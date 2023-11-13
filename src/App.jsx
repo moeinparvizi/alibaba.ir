@@ -7,6 +7,7 @@ import Barcode from "./Components/barcode"
 import SubNavMobile from "./Components/subnavmobile"
 import YourQuestions from "./Components/yourquestions"
 import Blit from "./Components/blit";
+import Footer from "./Components/footer"
 
 function App() {
   return (
@@ -15,14 +16,15 @@ function App() {
         <TopNav />
         <Header />
         <Content />
+      </main>
         <Slider />
         <Barcode />
         <SubNavMobile />
         <YourQuestions />
         <Blit />
-        {/* this is a test section for menu scroll action */}
-      <section className="h-[500vh]"></section>
-      </main>
+        {/* this is a test section for menu scroll action
+      <section className="h-[500vh]"></section> */}
+        <Footer />
     </>
   );
 }
