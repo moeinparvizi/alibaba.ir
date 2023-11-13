@@ -6,6 +6,7 @@ import Slider from "./Components/slider";
 import Barcode from "./Components/barcode"
 import SubNavMobile from "./Components/subnavmobile"
 import YourQuestions from "./Components/yourquestions"
+import Blit from "./Components/blit";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Barcode />
         <SubNavMobile />
         <YourQuestions />
+        <Blit />
         {/* this is a test section for menu scroll action */}
       <section className="h-[500vh]"></section>
       </main>
